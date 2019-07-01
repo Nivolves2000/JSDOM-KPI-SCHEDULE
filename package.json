@@ -1,0 +1,24 @@
+{
+  "name": "jsdom-kpi-schedule",
+  "version": "1.0.0",
+  "description": "jsdom-kpi-schedule",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nivolves2000/JSDOM-KPI-SCHEDULE.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nivolves2000/JSDOM-KPI-SCHEDULE/issues"
+  },
+  "homepage": "https://github.com/Nivolves2000/JSDOM-KPI-SCHEDULE#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.0.1"
+  }
+}
