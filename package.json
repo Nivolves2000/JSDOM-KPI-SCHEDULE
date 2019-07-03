@@ -17,7 +17,14 @@
     "url": "https://github.com/Nivolves2000/JSDOM-KPI-SCHEDULE/issues"
   },
   "homepage": "https://github.com/Nivolves2000/JSDOM-KPI-SCHEDULE#readme",
-  "dependencies": {},
+  "dependencies": {
+    "curl": "^0.1.4",
+    "form-data": "^2.4.0",
+    "form-scraper": "0.0.4",
+    "form-serialize": "^0.7.2",
+    "jsdom": "^15.1.1",
+    "request": "^2.88.0"
+  },
   "devDependencies": {
     "eslint": "^6.0.1"
   }
