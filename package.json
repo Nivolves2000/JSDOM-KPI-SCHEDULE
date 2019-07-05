@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Nivolves2000/JSDOM-KPI-SCHEDULE#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "curl": "^0.1.4",
     "form-data": "^2.4.0",
     "jsdom": "^15.1.1",
