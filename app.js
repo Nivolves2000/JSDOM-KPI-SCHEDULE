@@ -7,12 +7,12 @@ var bodyParser = require( 'body-parser' );
 const TelegramBot = require( 'node-telegram-bot-api' );
 
 
-const TOKEN = '';
+const TOKEN = '838448255:AAG-BTbYzV0hA1IK-tt7ym-3k_hWxE4ifOI';
 const port = 5000;
 const rozklad = 'http://rozklad.kpi.ua';
-const ngrokUrl = '';
+const ngrokUrl = 'https://7fd81d57.ngrok.io';
 const schedules = '/Schedules/';
-const url = 'http://rozklad.kpi.ua/Schedules/ScheduleGroupSelection.aspx?&mobile=true';
+const scheduleQuery = 'ScheduleGroupSelection.aspx?&mobile=true';
 
 const days = [ 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П\'ятниця', 'Субота' ];
 let schedule = {
@@ -43,12 +43,13 @@ const bot = new TelegramBot( TOKEN, { polling: true } );
 
 function parceDays( data, chatId ) {
   let dayIndex = 0;
+  const scheduleHalf = Object.keys( data ).length / 2;
   Object.keys( data ).map( day => {
-    if ( ( !days.includes( data[ day ].textContent ) ) && ( day !== '0' ) && ( day !== '49' ) ) {
+    if ( ( !days.includes( data[ day ].textContent ) ) && ( day !== '0' ) && ( day !== scheduleHalf.toString() ) ) {
       if ( data[ day ].children.length ) {
-        dayIndex !== 0 && schedule[ day <= 48 ? '1' : '2' ][ days[ dayIndex - 1 ] ].push( data[ day ].children[ '0' ].textContent );
+        dayIndex !== 0 && schedule[ day <= scheduleHalf - 1 ? '1' : '2' ][ days[ dayIndex - 1 ] ].push( data[ day ].children[ '0' ].textContent );
       } else {
-        schedule[ day <= 48 ? '1' : '2' ][ days[ dayIndex - 1 ] ].push( '' );
+        schedule[ day <= scheduleHalf - 1 ? '1' : '2' ][ days[ dayIndex - 1 ] ].push( '' );
       }
       dayIndex++;
       if ( dayIndex === 7 ) {
@@ -104,8 +105,8 @@ function parseForm( html, chatId, group ) {
   } );
 }
 
-function parceSchegle( chatId, group ) {
-  curl.get( url, null, ( err, resp, body ) => {
+function parceSchedle( chatId, group ) {
+  curl.get( `${ rozklad }${ schedules }${ scheduleQuery }`, null, ( err, resp, body ) => {
     if ( resp.statusCode == 200 ) {
       parseForm( body, chatId, group );
     }
@@ -122,7 +123,7 @@ bot.setWebHook( `${ ngrokUrl }/bot` );
 bot.on( 'message', ( msg ) => {
   const chatId = msg.chat.id;
   const group = msg.text;
-  parceSchegle( chatId, group );
+  parceSchedle( chatId, group );
 } );
 
 router.post( '/bot', ctx => {
