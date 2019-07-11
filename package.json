@@ -18,12 +18,14 @@
   },
   "homepage": "https://github.com/Nivolves2000/JSDOM-KPI-SCHEDULE#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "curl": "^0.1.4",
     "form-data": "^2.4.0",
-    "form-scraper": "0.0.4",
-    "form-serialize": "^0.7.2",
     "jsdom": "^15.1.1",
-    "request": "^2.88.0"
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^2.5.0",
+    "koa-router": "^7.4.0",
+    "node-telegram-bot-api": "^0.30.0"
   },
   "devDependencies": {
     "eslint": "^6.0.1"
