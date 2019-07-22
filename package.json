@@ -25,7 +25,8 @@
     "koa": "^2.7.0",
     "koa-bodyparser": "^2.5.0",
     "koa-router": "^7.4.0",
-    "node-telegram-bot-api": "^0.30.0"
+    "node-telegram-bot-api": "^0.30.0",
+    "now": "^15.8.5"
   },
   "devDependencies": {
     "eslint": "^6.0.1"
