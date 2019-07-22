@@ -8,4 +8,4 @@ before_script:
 script: 
   - npm run test
   - npm run deploy
-  - now alias --token=$ZEIT_KEY -V 2 node-labs-execution-$TRAVIS_BRANCH
+  - now alias --token=$FK9wXzDMgwcdkILcFofjyOeS -V 2 jsdom-kpi-schedle-$TRAVIS_BRANCH
