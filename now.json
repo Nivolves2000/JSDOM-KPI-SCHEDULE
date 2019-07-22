@@ -1,0 +1,9 @@
+{
+  "name": "JSDOM-KPI-SCHEDLE",
+  "builds": [
+    {
+      "src": "app.js",
+      "use": "@now/node"
+    }
+  ]
+}

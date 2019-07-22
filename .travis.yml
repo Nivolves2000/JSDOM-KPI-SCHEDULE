@@ -2,5 +2,10 @@ language: node_js
 node_js: 
   - "stable"
 cache:
-  directories:
-    - "node_modules"
+  - npm
+before_script:
+  - npm ci
+script: 
+  - npm run test
+  - npm run deploy
+  - now alias --token=$ZEIT_KEY -V 2 node-labs-execution-$TRAVIS_BRANCH

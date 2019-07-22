@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "build": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "echo Current branch: $TRAVIS_BRANCH",
+    "test": "echo \"Error: no test specified\""
   },
   "repository": {
     "type": "git",
